@@ -1,9 +1,14 @@
 import axios from 'axios'
 
-const API_URL = import.meta.env.VITE_API_URL
+// const API_URL = import.meta.env.VITE_API_URL
 
 const axiosApiBam =axios.create({
-    baseURL: API_URL,
+    baseURL: '/api',
+    headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json", //this line solved cors
+        "Accepts": "application/json"
+      },
 })
 
 axiosApiBam.interceptors.request.use((config) => {
