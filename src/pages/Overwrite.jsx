@@ -11,7 +11,7 @@ const Overwrite = () => {
     axiosApiBam
       .get("/users")
       .then(({ data }) => {
-        console.log(data)
+        // console.log(data)
         setUsersData(data);
       })
       .catch((err) => {

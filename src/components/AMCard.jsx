@@ -33,18 +33,18 @@ const AMCard = ({ user }) => {
 
   return (
     <section className="w-10/12 flex p-4 bg-secondary shadow-lg rounded-lg justify-between [&>div>h2]:text-center [&>div>h2]:font-bold">
-      <div>
+      <div className="self-center">
         <h2>Usuario</h2>
         <span>{`${user?.firstName} ${user?.lastName}`}</span>
       </div>
-      <div>
+      <div className="self-center">
         <h2>Correo</h2>
         <span>{user?.email}</span>
       </div>
       <div className="grid [&>span]:text-center">
         <h2>Fecha limite</h2>
         <span>{deadline.toLocaleDateString('es-ES', options)}</span>
-        <span>{deadline.toLocaleTimeString()}</span>
+        <span>{deadline.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</span>
         <button onClick={handleOpenModal} className="bg-alternative-primary text-white rounded-full px-4 py-1">
           Cambiar
         </button>
