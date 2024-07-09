@@ -1,7 +1,7 @@
 import { CloseIcon } from "../Icons/Svgs";
 import { useDispatch, useSelector } from "react-redux";
 import { closeModal } from "../store/slices/modal.slice";
-import { axiosApiBam } from "../utils/axiosConfig";
+import axiosApiBam from "../utils/axiosConfig";
 
 const DatepickerModal = ({ usersData, setUsersData}) => {
     const isModalShow = useSelector((store) => store.modal.isShow)

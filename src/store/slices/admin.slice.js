@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { axiosApiBam } from "../../utils/axiosConfig"
+import axiosApiBam from "../../utils/axiosConfig"
 
 
 const initState = {

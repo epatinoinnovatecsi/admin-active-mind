@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import AMCard from "../components/AMCard";
 import MainContainer from "../layout/MainContainer";
-import { axiosApiBam } from "../utils/axiosConfig";
 import DatepickerModal from "../components/DatepickerModal";
+import axiosApiBam from "../utils/axiosConfig";
 
 const Overwrite = () => {
   const [usersData, setUsersData] = useState([]);

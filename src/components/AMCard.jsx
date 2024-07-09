@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { axiosApiBam } from "../utils/axiosConfig";
 import { useDispatch } from "react-redux";
 import { openModal } from "../store/slices/modal.slice";
+import axiosApiBam from "../utils/axiosConfig";
 
 const AMCard = ({ user }) => {
   const [isBlock, setIsBlock] = useState(user?.isBlock);
