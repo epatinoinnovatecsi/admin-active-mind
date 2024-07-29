@@ -1,0 +1,16 @@
+.toggle-container > button {
+    display: none;
+}
+
+.toggle-container:hover > button:nth-child(2)::after {
+    content: 'Por fecha';
+}
+
+.toggle-container:hover > button {
+    display: block;
+}
+
+.toggle-container:hover > div{
+    display: none;
+}
+

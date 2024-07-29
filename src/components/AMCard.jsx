@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { openModal } from "../store/slices/modal.slice";
 import axiosApiBam from "../utils/axiosConfig";
+import TripleToggleSwitch from "./TripleToggleSwitch";
 
 const AMCard = ({ user }) => {
   const [isBlock, setIsBlock] = useState(user?.isBlock);
@@ -18,6 +19,18 @@ const AMCard = ({ user }) => {
     const currentState = isBlock;
     const data = {
       isBlock: !currentState,
+    };
+    axiosApiBam
+      .put(`/users/${user.id}`, data)
+      .then(({ data }) => {
+        setIsBlock(data.isBlock);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const handleTripleSwitch = (newState) => {
+    const data = {
+      isBlock: newState,
     };
     axiosApiBam
       .put(`/users/${user.id}`, data)
@@ -49,7 +62,7 @@ const AMCard = ({ user }) => {
           Cambiar
         </button>
       </div>
-      <button
+      {/* <button
         type="button"
         onClick={handleToggleEnable}
         className={`${
@@ -57,7 +70,10 @@ const AMCard = ({ user }) => {
         } text-white px-5 py-0 h-10 rounded-full self-center`}
       >
         {isBlock ? "Activar" : "Desactivar"}
-      </button>
+      </button> */}
+      <div className="self-center w-[370px] flex justify-center">
+        <TripleToggleSwitch state={isBlock} handleTripleSwitch={handleTripleSwitch}/>
+      </div>
     </section>
   );
 };
